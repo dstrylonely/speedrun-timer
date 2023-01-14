@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public final class MixinInGameHud {
     @Inject(method = "render", at = {@At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/client/MinecraftClient;getLastFrameDuration()F")})
-    public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo ci) {
+    public void render(final MatrixStack matrixStack, final float tickDelta, final CallbackInfo ci) {
         final Render2DEvent event = new Render2DEvent();
         event.setMatrixStack(matrixStack);
         SpeedrunTimerMod.getInstance().getEventPubSub().publish(event);

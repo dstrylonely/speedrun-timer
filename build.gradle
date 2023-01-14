@@ -12,6 +12,7 @@ group = project.maven_group
 
 repositories {
     maven { url 'https://jitpack.io' }
+    mavenCentral()
 }
 
 dependencies {
@@ -20,6 +21,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation 'io.github.nevalackin:radbus:1.0.0'
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "io.github.spair:imgui-java-app:1.86.5"
 }
 
 processResources {

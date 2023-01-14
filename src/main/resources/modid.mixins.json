@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "MixinInGameHud"
+    "MixinInGameHud",
+    "MixinKeyboard"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,6 +1,12 @@
 package io.github.dstrylonely.module;
 
 
+import io.github.dstrylonely.SpeedrunTimerMod;
+import io.github.dstrylonely.event.impl.KeyPressEvent;
+import io.github.dstrylonely.module.impl.IGTTimerModule;
+import io.github.dstrylonely.module.impl.MenuModule;
+import io.github.dstrylonely.module.impl.RTATimerModule;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,8 +15,8 @@ public final class ModuleRepository {
 
     public ModuleRepository() {
         this.moduleCache = new HashMap<>();
+        addModules(new MenuModule(), new RTATimerModule(), new IGTTimerModule());
     }
-
 
     public Module getModuleByName(final String name) {
         return this.moduleCache.get(name);
